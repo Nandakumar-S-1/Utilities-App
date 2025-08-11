@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 
 const Stopwatch = () => {
+  console.log('-------------------');
+  
     const [beginTime,setBeginTime]=useState<number | null>(null)
     const [now,setNow]=useState<number|null>(null)
     const intervalRef=useRef<number|null>(null)
@@ -31,7 +33,9 @@ const Stopwatch = () => {
     
     return (
     <div>
-      
+      <h2>Time Passed: {secondsCompleated.toFixed(3)}s</h2>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={handleStop}>Stop</button>
     </div>
   )
 }
