@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 
 const Stopwatch = () => {
-  console.log('-------------------');
   
     const [beginTime,setBeginTime]=useState<number | null>(null)
     const [now,setNow]=useState<number|null>(null)
@@ -18,6 +17,10 @@ const Stopwatch = () => {
       intervalRef.current = window.setInterval(()=>{
         setNow(Date.now())
       },10)
+    }
+
+   function handlePause(){
+
     }
 
     function handleStop(){
