@@ -43,8 +43,9 @@ const Weather : React.FC = () => {
         }
         try {
             const res = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?q=${state.city}&appid=${API_KEY}&units=metric`
-            )
+  `https://api.openweathermap.org/data/2.5/weather?q=${state.city}&appid=${API_KEY}&units=metric`
+);
+
             const data = await res.json()
             if(data.cod ==="404"){
                 dispatch({type:"SET_ERROR",payload:"City is not found"})

@@ -3,7 +3,7 @@ import Clock from './Components/Clock/Clock'
 import Stopwatch from './Components/Stopwatch/Stopwatch'
 import Calculator from './Components/Calculator/Calculator'
 import Weather from './Components/Weather/Weather'
- 
+ import './App.css'
 const App = () => {
 
   const [activeTab,setActiveTab]=useState<"clock"|"stopwatch"|"calculator"|"weather">("clock")

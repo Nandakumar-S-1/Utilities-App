@@ -5,6 +5,7 @@ const Stopwatch = () => {
     const [beginTime,setBeginTime]=useState<number | null>(null)
     const [now,setNow]=useState<number|null>(null)
     const intervalRef=useRef<number|null>(null)
+    const [pausedTime,setPausedTime]=useState<number>(0)
 
     function handleStart(){
       setBeginTime(Date.now())
@@ -19,9 +20,14 @@ const Stopwatch = () => {
       },10)
     }
 
-   function handlePause(){
-
+  function handlePause() {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
     }
+    if (beginTime && now) {
+      setPausedTime(now - beginTime)
+    }
+  }
 
     function handleStop(){
       if(intervalRef.current){
@@ -38,6 +44,7 @@ const Stopwatch = () => {
     <div>
       <h2>Time Passed: {secondsCompleated.toFixed(3)}s</h2>
       <button onClick={handleStart}>Start</button>
+      <button onClick={handlePause}>Pause</button>
       <button onClick={handleStop}>Stop</button>
     </div>
   )
