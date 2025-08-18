@@ -7,7 +7,6 @@ import Weather from './Components/Weather/Weather'
 const App = () => {
 
   const [activeTab,setActiveTab]=useState<"clock"|"stopwatch"|"calculator"|"weather">("clock")
-  console.log(activeTab,'----------');
   
   return (
     <div style={{textAlign :"center",marginTop:"5rem"}}> 

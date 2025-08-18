@@ -13,6 +13,7 @@ const Calculator = () => {
         const diff = parseFloat(num1) - parseFloat(num2)
         setResult(diff)
     }
+    
     const handleDivision = () => {
         if (parseFloat(num2) === 0) {
             setResult(null)
